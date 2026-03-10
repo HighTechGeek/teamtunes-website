@@ -359,13 +359,27 @@ ul { list-style: none; }
 }
 
 .badge-img {
-  height: 52px;
-  width: auto;
   display: block;
+  height: auto;
+  max-width: 100%;
 }
 
-.store-badge-img.large .badge-img {
-  height: 64px;
+/* Apple SVG badge — constrain by width, height follows aspect ratio */
+.badge-apple { width: 148px; }
+
+/* Google Play PNG badge — slightly wider to visually match Apple's height */
+.badge-google { width: 168px; }
+
+/* Larger versions in the download CTA section */
+.store-badge-img.large .badge-apple { width: 185px; }
+.store-badge-img.large .badge-google { width: 210px; }
+
+/* Mobile — scale both down to fit small screens */
+@media (max-width: 640px) {
+  .badge-apple { width: 130px; }
+  .badge-google { width: 148px; }
+  .store-badge-img.large .badge-apple { width: 148px; }
+  .store-badge-img.large .badge-google { width: 168px; }
 }
 
 /* Scroll hint arrow */
