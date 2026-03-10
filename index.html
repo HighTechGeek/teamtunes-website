@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TeamTunes — The Music-Guessing Party Game</title>
+  <meta name="description" content="TeamTunes is the wildly addictive music-guessing party game for 3 or more players. Works with Spotify, Apple Music, YouTube, and more. Free on iOS and Android." />
+
+  <!-- Open Graph (social sharing previews) -->
+  <meta property="og:title" content="TeamTunes — The Music-Guessing Party Game" />
+  <meta property="og:description" content="Split into teams. Pick a song. Watch your friends scramble to guess it. Free on the App Store and Google Play." />
+  <meta property="og:image" content="assets/images/hero-splash.png" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/icon.png" />
+  <link rel="apple-touch-icon" href="assets/images/icon.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════════════ -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">
+        <img src="assets/images/icon.png" alt="TeamTunes icon" class="nav-icon" />
+        <span class="nav-wordmark">TeamTunes</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#how-to-play">How to Play</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+      </ul>
+      <a href="#download" class="btn btn-gold nav-cta">Download Free</a>
+      <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <!-- Mobile menu -->
+    <div class="nav-mobile" id="mobile-menu">
+      <a href="#about" class="mobile-link">About</a>
+      <a href="#how-to-play" class="mobile-link">How to Play</a>
+      <a href="#features" class="mobile-link">Features</a>
+      <a href="#gallery" class="mobile-link">Gallery</a>
+      <a href="#download" class="mobile-link btn btn-gold">Download Free</a>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════ -->
+  <section id="hero">
+    <!-- Background video with image fallback -->
+    <video class="hero-video" autoplay muted loop playsinline poster="assets/images/splash-bg.png">
+      <source src="assets/videos/loop.mp4" type="video/mp4" />
+    </video>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <img src="assets/images/icon.png" alt="TeamTunes" class="hero-icon reveal" />
+      <h1 class="hero-title reveal reveal-delay-1">TeamTunes</h1>
+      <p class="hero-tagline reveal reveal-delay-2">The music-guessing party game</p>
+      <p class="hero-sub reveal reveal-delay-3">
+        Split into teams. Pick a song. Watch your friends scramble to name that tune.
+      </p>
+      <div class="hero-buttons reveal reveal-delay-4">
+        <a href="https://apps.apple.com/be/app/teamtunes-game/id6759209061"
+           target="_blank" rel="noopener" class="store-badge apple">
+          <svg class="store-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+          </svg>
+          <div class="store-text">
+            <span class="store-label">Download on the</span>
+            <span class="store-name">App Store</span>
+          </div>
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.thedigitalage.teamtunes"
+           target="_blank" rel="noopener" class="store-badge google">
+          <svg class="store-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M3.18 23.76c.3.17.64.22.98.16l13.2-7.62-2.82-2.82-11.36 10.28zm-1.6-19.7C1.22 4.5 1 5.03 1 5.71v12.58c0 .68.22 1.21.58 1.65l.09.08 7.05-7.04v-.17L1.58 4.06zm18.12 9.35L17.2 11.1l-3.14 3.14 3.14 3.14 2.52-1.46c.72-.41.72-1.09 0-1.5zM4.16.44L17.36 8.1l-2.82 2.82L3.18.28A1.2 1.2 0 014.16.44z"/>
+          </svg>
+          <div class="store-text">
+            <span class="store-label">Get it on</span>
+            <span class="store-name">Google Play</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <a href="#about" class="hero-scroll-hint" aria-label="Scroll down">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 5v14M5 12l7 7 7-7"/>
+      </svg>
+    </a>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       ABOUT
+  ═══════════════════════════════════════════ -->
+  <section id="about" class="section section-dark">
+    <div class="container">
+      <div class="split-layout">
+        <div class="split-text">
+          <p class="section-eyebrow reveal">Party game</p>
+          <h2 class="section-title reveal">Turn any hangout into an epic music showdown</h2>
+          <p class="section-body reveal">
+            TeamTunes is the wildly addictive music-guessing party game that brings the heat
+            when you've got three or more players ready to rock. Split into teams, pick a
+            song from your favorite streaming service, and challenge the other teams to
+            name that tune — song, artist, or album. The team that guesses first scores big.
+          </p>
+          <p class="section-body reveal">
+            Works with <strong>Spotify, Apple Music, YouTube, YouTube Music,
+            Amazon Music, and QQ Music</strong> — so everyone plays with the music they love.
+            Many services work even without a subscription.
+          </p>
+          <a href="#how-to-play" class="btn btn-outline reveal">See how to play →</a>
+        </div>
+        <div class="split-image reveal">
+          <img src="assets/images/splash-bg.png" alt="Friends enjoying TeamTunes at a concert" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       HOW TO PLAY
+  ═══════════════════════════════════════════ -->
+  <section id="how-to-play" class="section section-mid">
+    <div class="container">
+      <p class="section-eyebrow center reveal">The rules</p>
+      <h2 class="section-title center reveal">How to play</h2>
+      <p class="section-body center reveal" style="max-width:600px;margin:0 auto 3rem;">
+        Easy to learn in under a minute. Hard to put down once you start.
+      </p>
+
+      <div class="steps-grid">
+
+        <div class="step-card reveal">
+          <div class="step-number">1</div>
+          <div class="step-image">
+            <img src="assets/images/pick-teams.png" alt="Friends splitting into teams" />
+          </div>
+          <h3 class="step-title">Split into teams</h3>
+          <p class="step-body">
+            Gather at least 3 players and divide into teams. Play with a small
+            group of friends or scale up to a big party — the more the merrier.
+          </p>
+        </div>
+
+        <div class="step-card reveal reveal-delay-1">
+          <div class="step-number">2</div>
+          <div class="step-image">
+            <img src="assets/images/pick-a-song.png" alt="Picking a song on a phone" />
+          </div>
+          <h3 class="step-title">Pick a song</h3>
+          <p class="step-body">
+            The active team picks any song from their favorite music service.
+            They choose whether the others must guess the <em>song, artist,</em> or <em>album</em>.
+            Pick strategically — songs the other teams might know (but can't quite name).
+          </p>
+        </div>
+
+        <div class="step-card reveal reveal-delay-2">
+          <div class="step-number">3</div>
+          <div class="step-image">
+            <img src="assets/images/seated-picker.png" alt="Group listening and guessing" />
+          </div>
+          <h3 class="step-title">Guess!</h3>
+          <p class="step-body">
+            The music plays — and the race is on. The first team to shout the
+            correct answer wins <strong class="gold">2 points</strong>. The picking
+            team earns <strong class="gold">1 point</strong> for a successful pick.
+            If nobody guesses, the picking team <strong class="red">loses a point</strong>.
+          </p>
+        </div>
+
+        <div class="step-card reveal reveal-delay-3">
+          <div class="step-number">4</div>
+          <div class="step-image">
+            <img src="assets/images/seated-cheering.png" alt="Team cheering after winning" />
+          </div>
+          <h3 class="step-title">Pass &amp; repeat</h3>
+          <p class="step-body">
+            The phone passes to the next team and it's their turn to pick. After
+            all teams have gone, the round ends and scores are shown. Keep playing
+            until your win condition is met.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SCORING CALLOUT
+  ═══════════════════════════════════════════ -->
+  <section class="section section-dark scoring-section">
+    <div class="container">
+      <p class="section-eyebrow center reveal">Smart scoring</p>
+      <h2 class="section-title center reveal">Strategy makes it interesting</h2>
+      <p class="section-body center reveal" style="max-width:580px;margin:0 auto 3rem;">
+        Picking an obscure deep cut nobody knows might feel safe — but it'll cost you a point if nobody guesses.
+        Pick something too obvious and the other team scoops the 2 points. Stay sharp.
+      </p>
+      <div class="score-cards">
+        <div class="score-card reveal">
+          <div class="score-value gold">+2</div>
+          <div class="score-label">First team to guess correctly</div>
+        </div>
+        <div class="score-card reveal reveal-delay-1">
+          <div class="score-value gold">+1</div>
+          <div class="score-label">Picking team earns for a successful pick</div>
+        </div>
+        <div class="score-card reveal reveal-delay-2">
+          <div class="score-value red">−1</div>
+          <div class="score-label">Picking team loses a point if nobody guesses</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       MUSIC SERVICES
+  ═══════════════════════════════════════════ -->
+  <section id="music-services" class="section section-mid">
+    <div class="container">
+      <p class="section-eyebrow center reveal">Compatibility</p>
+      <h2 class="section-title center reveal">Works with the music you love</h2>
+      <p class="section-body center reveal" style="max-width:580px;margin:0 auto 3rem;">
+        TeamTunes controls your music right inside the app — no switching between apps.
+        Many services work without a paid subscription.
+      </p>
+      <div class="services-grid">
+        <div class="service-badge spotify reveal">
+          <span class="service-dot"></span>Spotify
+        </div>
+        <div class="service-badge apple-music reveal reveal-delay-1">
+          <span class="service-dot"></span>Apple Music
+        </div>
+        <div class="service-badge youtube reveal reveal-delay-2">
+          <span class="service-dot"></span>YouTube
+        </div>
+        <div class="service-badge youtube-music reveal reveal-delay-2">
+          <span class="service-dot"></span>YouTube Music
+        </div>
+        <div class="service-badge amazon reveal reveal-delay-3">
+          <span class="service-dot"></span>Amazon Music
+        </div>
+        <div class="service-badge qq reveal reveal-delay-3">
+          <span class="service-dot"></span>QQ Music
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FEATURES
+  ═══════════════════════════════════════════ -->
+  <section id="features" class="section section-dark">
+    <div class="container">
+      <p class="section-eyebrow center reveal">Flexible &amp; customizable</p>
+      <h2 class="section-title center reveal">Play your way</h2>
+      <p class="section-body center reveal" style="max-width:580px;margin:0 auto 3rem;">
+        Quick settings for casual players, deep settings for the competitive crowd.
+        Set your win conditions before the game starts.
+      </p>
+      <div class="features-grid">
+        <div class="feature-card reveal">
+          <div class="feature-icon">🎯</div>
+          <h3 class="feature-title">Multiple win conditions</h3>
+          <p class="feature-body">End the game by number of rounds, time limit, or first team to reach a target score.</p>
+        </div>
+        <div class="feature-card reveal reveal-delay-1">
+          <div class="feature-icon">👥</div>
+          <h3 class="feature-title">Any group size</h3>
+          <p class="feature-body">Minimum 3 players. No hard maximum — though past 20 it gets beautifully chaotic.</p>
+        </div>
+        <div class="feature-card reveal reveal-delay-2">
+          <div class="feature-icon">🎵</div>
+          <h3 class="feature-title">Any song, any genre</h3>
+          <p class="feature-body">Pick from millions of songs across your favorite streaming services. The library is limitless.</p>
+        </div>
+        <div class="feature-card reveal reveal-delay-3">
+          <div class="feature-icon">📱</div>
+          <h3 class="feature-title">One or two phones</h3>
+          <p class="feature-body">Use one phone for everything, or dedicate a second phone just for playing music while scoring on another.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon">🏆</div>
+          <h3 class="feature-title">Team customization</h3>
+          <p class="feature-body">Name your teams, set rounds, and configure advanced scoring parameters to match your house rules.</p>
+        </div>
+        <div class="feature-card reveal reveal-delay-1">
+          <div class="feature-icon">🥚</div>
+          <h3 class="feature-title">Hidden easter eggs</h3>
+          <p class="feature-body">Discover hidden surprises tucked inside the game. Can you find them all?</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       GALLERY
+  ═══════════════════════════════════════════ -->
+  <section id="gallery" class="section section-mid">
+    <div class="container">
+      <p class="section-eyebrow center reveal">In the wild</p>
+      <h2 class="section-title center reveal">Made for real moments</h2>
+      <p class="section-body center reveal" style="max-width:560px;margin:0 auto 2rem;">
+        House parties, game nights, road trips, holiday gatherings — TeamTunes fits every scene.
+      </p>
+    </div>
+    <div class="gallery-scroll">
+      <div class="gallery-track">
+        <div class="gallery-item">
+          <img src="assets/images/pick-teams.png" alt="Friends picking teams" />
+          <div class="gallery-caption">Picking teams</div>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/pick-a-song.png" alt="Picking a song at a party" />
+          <div class="gallery-caption">Choosing a song</div>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/pick-teams-2.png" alt="Group of friends at a party" />
+          <div class="gallery-caption">Game night with friends</div>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/pick-teams-3.png" alt="Friends discussing song choice" />
+          <div class="gallery-caption">Planning the pick</div>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/seated-picker.png" alt="Focused on guessing" />
+          <div class="gallery-caption">On the edge of your seat</div>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/seated-cheering.png" alt="Celebrating a win" />
+          <div class="gallery-caption">Celebrating the win</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       DOWNLOAD CTA
+  ═══════════════════════════════════════════ -->
+  <section id="download" class="section section-download">
+    <div class="download-bg-video">
+      <video autoplay muted loop playsinline poster="assets/images/splash-bg.png">
+        <source src="assets/videos/loop2.mp4" type="video/mp4" />
+      </video>
+      <div class="download-overlay"></div>
+    </div>
+    <div class="container download-content">
+      <img src="assets/images/icon.png" alt="TeamTunes" class="download-icon reveal" />
+      <h2 class="section-title center reveal">Ready to play?</h2>
+      <p class="section-body center reveal" style="max-width:500px;margin:0 auto 2.5rem;">
+        Free to download on iPhone, iPad, and Android. Start your first game in minutes.
+      </p>
+      <div class="hero-buttons reveal">
+        <a href="https://apps.apple.com/be/app/teamtunes-game/id6759209061"
+           target="_blank" rel="noopener" class="store-badge apple large">
+          <svg class="store-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+          </svg>
+          <div class="store-text">
+            <span class="store-label">Download on the</span>
+            <span class="store-name">App Store</span>
+          </div>
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.thedigitalage.teamtunes"
+           target="_blank" rel="noopener" class="store-badge google large">
+          <svg class="store-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M3.18 23.76c.3.17.64.22.98.16l13.2-7.62-2.82-2.82-11.36 10.28zm-1.6-19.7C1.22 4.5 1 5.03 1 5.71v12.58c0 .68.22 1.21.58 1.65l.09.08 7.05-7.04v-.17L1.58 4.06zm18.12 9.35L17.2 11.1l-3.14 3.14 3.14 3.14 2.52-1.46c.72-.41.72-1.09 0-1.5zM4.16.44L17.36 8.1l-2.82 2.82L3.18.28A1.2 1.2 0 014.16.44z"/>
+          </svg>
+          <div class="store-text">
+            <span class="store-label">Get it on</span>
+            <span class="store-name">Google Play</span>
+          </div>
+        </a>
+      </div>
+      <p class="download-fine-print reveal">Free to play · In-app purchases available · Rated 4+</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="assets/images/icon.png" alt="TeamTunes" class="footer-icon" />
+        <span class="footer-wordmark">TeamTunes</span>
+      </div>
+      <div class="footer-links">
+        <a href="#about">About</a>
+        <a href="#how-to-play">How to Play</a>
+        <a href="#features">Features</a>
+        <a href="https://apps.apple.com/be/app/teamtunes-game/id6759209061" target="_blank" rel="noopener">App Store</a>
+        <a href="https://play.google.com/store/apps/details?id=com.thedigitalage.teamtunes" target="_blank" rel="noopener">Google Play</a>
+      </div>
+      <p class="footer-copy">&copy; 2025 TeamTunes &amp; The Digital Age. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
