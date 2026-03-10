@@ -359,28 +359,28 @@ ul { list-style: none; }
   filter: brightness(1.12) drop-shadow(0 8px 20px rgba(0,0,0,0.4));
 }
 
-/* Both badges calculated to render at exactly the same height */
+/* Both badges are 142px tall PNGs — widths calculated so both render at same height */
 .badge-img {
   display: block;
   height: auto;
 }
 
-/* Apple SVG: ratio 2.99:1 → 155px wide = 52px tall */
-.badge-apple { width: 155px; }
+/* Apple PNG: 425x142, ratio 2.99:1 → 156px wide = 52px tall */
+.badge-apple { width: 156px; }
 
-/* Google Play PNG: ratio 2.58:1 → 134px wide = 52px tall */
-.badge-google { width: 134px; }
+/* Google Play PNG: 478x142, ratio 3.37:1 → 175px wide = 52px tall */
+.badge-google { width: 175px; }
 
 /* Large versions in download CTA: same height ~64px */
-.store-badge-img.large .badge-apple { width: 191px; }
-.store-badge-img.large .badge-google { width: 165px; }
+.store-badge-img.large .badge-apple { width: 192px; }
+.store-badge-img.large .badge-google { width: 216px; }
 
 /* Mobile: same height ~42px */
 @media (max-width: 640px) {
-  .badge-apple { width: 125px; }
-  .badge-google { width: 108px; }
-  .store-badge-img.large .badge-apple { width: 148px; }
-  .store-badge-img.large .badge-google { width: 128px; }
+  .badge-apple { width: 126px; }
+  .badge-google { width: 141px; }
+  .store-badge-img.large .badge-apple { width: 156px; }
+  .store-badge-img.large .badge-google { width: 175px; }
 }
 
 /* Scroll hint arrow */
