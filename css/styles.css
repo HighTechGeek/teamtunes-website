@@ -359,23 +359,28 @@ ul { list-style: none; }
   filter: brightness(1.12) drop-shadow(0 8px 20px rgba(0,0,0,0.4));
 }
 
+/* Both badges calculated to render at exactly the same height */
 .badge-img {
   display: block;
-  width: 155px;   /* explicit width is reliable for both SVG and PNG */
-  height: auto;   /* height scales proportionally from width */
+  height: auto;
 }
 
-.store-badge-img.large .badge-img {
-  width: 190px;
-}
+/* Apple SVG: ratio 2.99:1 → 155px wide = 52px tall */
+.badge-apple { width: 155px; }
 
+/* Google Play PNG: ratio 2.58:1 → 134px wide = 52px tall */
+.badge-google { width: 134px; }
+
+/* Large versions in download CTA: same height ~64px */
+.store-badge-img.large .badge-apple { width: 191px; }
+.store-badge-img.large .badge-google { width: 165px; }
+
+/* Mobile: same height ~42px */
 @media (max-width: 640px) {
-  .badge-img {
-    width: 135px;
-  }
-  .store-badge-img.large .badge-img {
-    width: 155px;
-  }
+  .badge-apple { width: 125px; }
+  .badge-google { width: 108px; }
+  .store-badge-img.large .badge-apple { width: 148px; }
+  .store-badge-img.large .badge-google { width: 128px; }
 }
 
 /* Scroll hint arrow */
