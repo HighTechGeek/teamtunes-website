@@ -160,46 +160,6 @@
       transform: none;
     }
 
-    /* Math captcha */
-    .captcha-row {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      flex-wrap: wrap;
-    }
-    .captcha-question {
-      font-size: 1rem;
-      color: var(--text-secondary);
-      white-space: nowrap;
-    }
-    .captcha-question strong {
-      color: var(--text-primary);
-      font-weight: 700;
-    }
-    .captcha-input {
-      background: var(--bg-card);
-      border: 1.5px solid var(--border);
-      border-radius: 10px;
-      padding: 0.85rem 1rem;
-      font-family: 'Outfit', sans-serif;
-      font-size: 1rem;
-      color: var(--text-primary);
-      transition: border-color 0.2s, box-shadow 0.2s;
-      width: 80px;
-    }
-    .captcha-input:focus {
-      outline: none;
-      border-color: var(--gold);
-      box-shadow: 0 0 0 3px rgba(245, 200, 66, 0.12);
-    }
-    .captcha-input::placeholder {
-      color: var(--text-muted);
-    }
-    .captcha-input.wrong {
-      border-color: var(--red);
-      box-shadow: 0 0 0 3px rgba(232, 85, 85, 0.12);
-    }
-
     /* Success / Error states */
     .form-status {
       display: none;
@@ -297,15 +257,6 @@
                   placeholder="What's on your mind?" required></textarea>
       </div>
 
-      <!-- Math captcha -->
-      <div class="form-group">
-        <label class="form-label" for="captchaAnswer">Quick check <span style="color:var(--red)">*</span></label>
-        <div class="captcha-row">
-          <span class="captcha-question">What is <strong id="captchaQuestion"></strong>?</span>
-          <input class="captcha-input" type="number" id="captchaAnswer" placeholder="?" autocomplete="off" required />
-        </div>
-      </div>
-
       <div class="form-status" id="formStatus"></div>
 
       <button class="form-submit" type="submit" id="submitBtn">Send Message</button>
@@ -332,38 +283,8 @@
     const formStatus = document.getElementById('formStatus');
     const successScreen = document.getElementById('successScreen');
 
-    // Generate math captcha
-    let captchaAnswer;
-    function newCaptcha() {
-      const a = Math.floor(Math.random() * 10) + 1;
-      const b = Math.floor(Math.random() * 10) + 1;
-      const ops = [
-        { label: a + ' + ' + b, answer: a + b },
-        { label: a + ' + ' + b, answer: a + b },
-        { label: Math.max(a,b) + ' − ' + Math.min(a,b), answer: Math.max(a,b) - Math.min(a,b) }
-      ];
-      const pick = ops[Math.floor(Math.random() * ops.length)];
-      document.getElementById('captchaQuestion').textContent = pick.label;
-      captchaAnswer = pick.answer;
-      document.getElementById('captchaAnswer').value = '';
-      document.getElementById('captchaAnswer').classList.remove('wrong');
-    }
-    newCaptcha();
-
     form.addEventListener('submit', async function(e) {
       e.preventDefault();
-
-      // Validate captcha
-      const userAnswer = parseInt(document.getElementById('captchaAnswer').value, 10);
-      if (userAnswer !== captchaAnswer) {
-        const input = document.getElementById('captchaAnswer');
-        input.classList.add('wrong');
-        input.value = '';
-        input.placeholder = 'Try again';
-        input.focus();
-        newCaptcha();
-        return;
-      }
 
       submitBtn.disabled = true;
       submitBtn.textContent = 'Sending…';
@@ -394,7 +315,7 @@
           throw new Error(json.message || 'Submission failed');
         }
       } catch(err) {
-        formStatus.textContent = 'Something went wrong. Please try again or email us directly.';
+        formStatus.textContent = 'Something went wrong. Please try again shortly.';
         formStatus.classList.add('error');
         formStatus.style.display = 'block';
         submitBtn.disabled = false;
