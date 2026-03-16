@@ -15,6 +15,7 @@
   <link rel="icon" type="image/png" href="assets/images/icon.png" />
 
   <link rel="stylesheet" href="css/styles.css" />
+  <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
   <style>
     .privacy-nav {
       position: sticky;
@@ -256,6 +257,8 @@
         <textarea class="form-textarea" id="message" name="message"
                   placeholder="What's on your mind?" required></textarea>
       </div>
+
+      <div class="h-captcha" data-captcha="true"></div>
 
       <div class="form-status" id="formStatus"></div>
 
